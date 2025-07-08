@@ -1,64 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Your Profile</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 80px auto;
-            background-color: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        p {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .center {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Hello, {{ request.user.username }} 👋</h1>
-        <p>Welcome to your profile page.</p>
-
-        <div class="center">
-            <a href="{% url 'logout' %}" class="btn">Logout</a>
-        </div>
-    </div>
-</body>
-</html>
+{% extends "akaunti/base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+  <h2>Your Profile</h2>
+  <p><strong>Username:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <a href="{% url 'logout' %}" class="btn">Logout</a>
+{% endblock %}

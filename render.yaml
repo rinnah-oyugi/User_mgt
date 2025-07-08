@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: user-management-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn User_mgt.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: User_mgt.settings
+      - key: SECRET_KEY
+        value: 70@as(+t&=rtmisu7^4)=dui0gj46i)uys0&an939%68bm6w#&
+      - key: DEBUG
+        value: false

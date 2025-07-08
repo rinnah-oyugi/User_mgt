@@ -1,0 +1,15 @@
+{% extends "akaunti/base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <div class="center">
+    <h2>Welcome to the User Management System</h2>
+
+    {% if user.is_authenticated %}
+      <p>Hello, {{ user.username }} 👋</p>
+      <a href="{% url 'profile' %}" class="btn">Go to Profile</a>
+    {% else %}
+      <p>Please log in or register to continue.</p>
+    {% endif %}
+  </div>
+{% endblock %}
