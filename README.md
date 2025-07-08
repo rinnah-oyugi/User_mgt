@@ -91,10 +91,6 @@ MIT License.
 🔗 Author
 GitHub: rinnah-oyugi
 
-yaml
-Copy
-Edit
-
 ---
 
 
